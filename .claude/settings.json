@@ -1,0 +1,252 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+
+    "allow": [
+      // =============================
+      // Git
+      // =============================
+      "Bash(git *)",
+      "PowerShell(git *)",
+      "Cmd(git *)",
+
+      // GitHub CLI
+      "Bash(gh *)",
+      "PowerShell(gh *)",
+      "Cmd(gh *)",
+
+      // =============================
+      // Node.js
+      // =============================
+      "Bash(node *)",
+      "PowerShell(node *)",
+      "Cmd(node *)",
+
+      "Bash(npm *)",
+      "PowerShell(npm *)",
+      "Cmd(npm *)",
+
+      "Bash(npx *)",
+      "PowerShell(npx *)",
+      "Cmd(npx *)",
+
+      "Bash(pnpm *)",
+      "PowerShell(pnpm *)",
+      "Cmd(pnpm *)",
+
+      "Bash(yarn *)",
+      "PowerShell(yarn *)",
+      "Cmd(yarn *)",
+
+      // =============================
+      // Python
+      // =============================
+      "Bash(python *)",
+      "PowerShell(python *)",
+      "Cmd(python *)",
+
+      "Bash(py *)",
+      "PowerShell(py *)",
+      "Cmd(py *)",
+
+      "Bash(pip *)",
+      "PowerShell(pip *)",
+      "Cmd(pip *)",
+
+      "Bash(pip3 *)",
+      "PowerShell(pip3 *)",
+      "Cmd(pip3 *)",
+
+      "Bash(pytest *)",
+      "PowerShell(pytest *)",
+      "Cmd(pytest *)",
+
+      "Bash(uv *)",
+      "PowerShell(uv *)",
+      "Cmd(uv *)",
+
+      // =============================
+      // Rust
+      // =============================
+      "Bash(cargo *)",
+      "PowerShell(cargo *)",
+      "Cmd(cargo *)",
+
+      // =============================
+      // Go
+      // =============================
+      "Bash(go *)",
+      "PowerShell(go *)",
+      "Cmd(go *)",
+
+      // =============================
+      // Java
+      // =============================
+      "Bash(gradle *)",
+      "PowerShell(gradle *)",
+      "Cmd(gradle *)",
+
+      "Bash(./gradlew *)",
+      "PowerShell(gradlew.bat *)",
+      "Cmd(gradlew.bat *)",
+
+      // =============================
+      // Docker
+      // =============================
+      "Bash(docker *)",
+      "PowerShell(docker *)",
+      "Cmd(docker *)",
+
+      "Bash(docker compose *)",
+      "PowerShell(docker compose *)",
+      "Cmd(docker compose *)",
+
+      // =============================
+      // Databases
+      // =============================
+      "Bash(supabase *)",
+      "PowerShell(supabase *)",
+      "Cmd(supabase *)",
+
+      "Bash(prisma *)",
+      "PowerShell(prisma *)",
+      "Cmd(prisma *)",
+
+      // =============================
+      // Build tools
+      // =============================
+      "Bash(make *)",
+      "PowerShell(make *)",
+      "Cmd(make *)",
+
+      "Bash(cmake *)",
+      "PowerShell(cmake *)",
+      "Cmd(cmake *)",
+
+      "Bash(ninja *)",
+      "PowerShell(ninja *)",
+      "Cmd(ninja *)",
+
+      // =============================
+      // Linux utilities
+      // =============================
+      "Bash(ls *)",
+      "PowerShell(ls *)",
+      "Cmd(dir *)",
+
+      "Bash(cat *)",
+      "PowerShell(Get-Content *)",
+      "Cmd(type *)",
+
+      "Bash(head *)",
+      "PowerShell(Get-Content *)",
+
+      "Bash(tail *)",
+      "PowerShell(Get-Content *)",
+
+      "Bash(find *)",
+      "PowerShell(Get-ChildItem *)",
+      "Cmd(where *)",
+
+      "Bash(grep *)",
+      "PowerShell(Select-String *)",
+      "Cmd(findstr *)",
+
+      "Bash(rg *)",
+      "PowerShell(rg *)",
+      "Cmd(rg *)",
+
+      "Bash(fd *)",
+      "PowerShell(fd *)",
+      "Cmd(fd *)",
+
+      "Bash(tree *)",
+      "PowerShell(tree *)",
+      "Cmd(tree *)",
+
+      "Bash(which *)",
+      "PowerShell(Get-Command *)",
+      "Cmd(where *)",
+
+      "Bash(pwd *)",
+      "PowerShell(pwd)",
+      "Cmd(cd)",
+
+      // =============================
+      // Windows package managers
+      // =============================
+      "PowerShell(winget *)",
+      "Cmd(winget *)",
+
+      "PowerShell(choco *)",
+      "Cmd(choco *)",
+
+      "PowerShell(scoop *)",
+      "Cmd(scoop *)",
+
+      // =============================
+      // macOS package manager
+      // =============================
+      "Bash(brew *)"
+    ],
+
+    "ask": [
+      "Bash(curl *)",
+      "PowerShell(Invoke-WebRequest *)",
+      "PowerShell(Invoke-RestMethod *)",
+      "Cmd(curl *)",
+
+      "Bash(wget *)",
+
+      "Bash(unzip *)",
+      "PowerShell(Expand-Archive *)",
+
+      "Bash(tar *)",
+      "PowerShell(tar *)",
+
+      "Bash(mv *)",
+      "PowerShell(Move-Item *)",
+      "Cmd(move *)",
+
+      "Bash(chmod *)",
+      "PowerShell(icacls *)",
+
+      "Bash(chown *)"
+    ],
+
+    "deny": [
+      // History destruction
+      "Bash(git reset --hard *)",
+      "PowerShell(git reset --hard *)",
+      "Cmd(git reset --hard *)",
+
+      "Bash(git clean -fd *)",
+      "PowerShell(git clean -fd *)",
+      "Cmd(git clean -fd *)",
+
+      "Bash(git clean -fdx *)",
+      "PowerShell(git clean -fdx *)",
+      "Cmd(git clean -fdx *)",
+
+      // Dangerous deletes
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+
+      "PowerShell(Remove-Item -Recurse -Force *)",
+
+      "Cmd(rd /s *)",
+      "Cmd(rmdir /s *)",
+
+      "Bash(shred *)",
+
+      // Disk formatting
+      "Bash(mkfs *)",
+      "PowerShell(Format-Volume *)",
+      "Cmd(format *)",
+
+      // Privilege escalation
+      "Bash(sudo *)",
+      "PowerShell(Start-Process * -Verb RunAs *)"
+    ]
+  }
+}
