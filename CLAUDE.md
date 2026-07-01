@@ -1,6 +1,7 @@
 # CLAUDE.md — <PROJECT NAME>
 
-**What this is:** <one sentence: what it does and who it's for>.  
+**What this is:** <one sentence: what it does and who it's for>.   
+
 **Current goal:** <the MVP slice or milestone>.
 
 ## Operating Rules
