@@ -1,6 +1,8 @@
 # Karpathyan Agentic Templates
 
 Fork this reusable project scaffold to start a new project with Claude Code or Codex in a tight, human-led loop.
+- pre-written `CLAUDE.md`
+- pre-defined `settings.json` for codex and claude (same permissions).
 
 This repository packages opinionated agent instructions, supporting docs, and local settings for projects using Andrej Karpathy's guidance for working with agents:
 
