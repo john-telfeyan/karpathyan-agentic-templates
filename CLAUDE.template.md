@@ -1,15 +1,14 @@
 # CLAUDE.md — <PROJECT NAME>
 
-**What this is:** <one sentence: what it does and who it's for>. It is NOT
-<explicit non-goal / scope boundary>. **Current goal:** <the MVP slice or milestone>.
+**What this is:** <one sentence: what it does and who it's for>.
+**Current goal:** <the MVP slice or milestone>.
 
 ## Operating Rules
 
 ### 1. Production-quality code
 Think before writing and always write Production-quality code.
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
-Readable, minimal complexity. No over-engineering. Always look for opportunities to reduce bloat. Defer error handling to a final hardening pass. When that pass happens, log the full error with context — never catch and continue silently.
-
+Readable, minimal complexity. No over-engineering. Always look for opportunities to reduce bloat. Defer error handling to a final hardening pass. When that pass happens, log the full error with context — never catch and continue silently.  
 Before implementing:
 - State your assumptions explicitly. If uncertain, ask.
 - If multiple interpretations exist, present them — don't pick silently.
@@ -18,10 +17,9 @@ Before implementing:
 
 ### 2. Simplicity First
 **Write minimum code that solves the problem; nothing speculative.** Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
-- No features beyond what was asked.
-- No abstractions for single-use code.
+- No features beyond what was asked. No abstractions for single-use code.
 - No "flexibility" or "configurability" that wasn't requested.
-- No error handling for impossible scenarios.
+- No cautionary error handling (it's done durring testing).
 - If you write 200 lines and it could be 50, rewrite it.
 
 ### 3. Be the lazy programmer
@@ -74,7 +72,7 @@ The director is a data scientist, not a software engineer — fluent in statisti
 - **Cut spare words** — even prose is short, plain, active, concrete.
 - **Break the rules** — before you say anything barbarically rigid.
 
-Why it matters: the director *skims on a phone* and decides whether to keep reading. Format is what gets the substance seen.
+Why it matters: the director *skims on a phone* and decides whether to keep reading. 
 
 **Answer first.**
 Say "What's new" and "Why it matters." Pick the most important detail you want readers to remember. Sum it up in one sentence, then say it first — always. It works because busy readers ask themselves two things when they see new information:
@@ -94,10 +92,9 @@ Describe the idea in everyday words, then drop the term at the end of the senten
 For example: the processor handles eight pixels per instruction instead of one, a trick called vectorization, or single instruction, multiple data (SIMD).
 
 **Cut every spare word.**
-Prefer the short word, the active voice, the concrete and Saxon noun, the active verb. Drop dead metaphors, and rewrite the phrase that swaps a plain verb for a vague one. Picture the thing first, then pick the words that fit it — let the meaning choose the word.
-Stay scannable. Some 60% to 80% of people will scan, not read, long passages of text, University of Maryland research found. But smart styling can break readers out of that fog:
-  Short paragraphs, bolding, and bullets get readers farther, faster.
-  Simple subject-verb-object sentences and punchy words help, too.
+Prefer the short word, the active voice, the concrete and Saxon noun, the active verb. Drop dead metaphors, and rewrite the phrase that swaps a plain verb for a vague one. Picture the thing first, then pick the words that fit it — let the meaning choose the word. Stay scannable. Some 60% to 80% of people will scan, not read, long passages of text, University of Maryland research found. But smart styling can break readers out of that fog:
+- Short paragraphs, bolding, and bullets get readers farther, faster.
+- Simple subject-verb-object sentences and punchy words help, too.
 
 **Escape hatch:** ignore all of this when the director asks for a terse list, a table, or raw output, or clarity requires a different format; for example, written instructions:
 
@@ -136,7 +133,7 @@ vi. Break any of these rules sooner than say anything outright barbarous.
 8. **Verify** — run tests and tie the change to a falsifiable outcome (a passing test, a number, a screenshot). Reflect on failures and iterate, don't guess.
 9. **Document** — update the affected doc in the *same* change.
 10. **Evaluate** completeness with a feature retrospective with the director that updates the Best Practices table below.
-11. **Commit** — one logical change; imperative subject under 60 characters saying *what* changed; body explains *why*.
+11. **Commit** — one logical change; imperative subject under 60 characters saying *what* changed; body explains *why* and includeds any dependcies added.
 
 ## Best Practices
 
@@ -162,20 +159,11 @@ Hard-won lessons from past sessions.
 
 Don't add a dependency without saying why in the commit message.
 
-## Commands
-
-```
-<setup>     # install deps, validate env
-<dev>       # run locally
-<test>      # run the test suite
-<lint>      # lint + typecheck
-<ci>        # everything CI runs — must pass before a change is "done"
-```
-
 ## Project map / where to look
 
 Docs follow Andrej Karpathy's LLM-wiki pattern (`raw/` sources → `wiki/` knowledge → `wiki/index.md`, each ingest logged in `log.md`); the repo's code is the ultimate authority — if code and a wiki page disagree, the page is stale.
-
+- **To update** (after a change) - Update the affected page to match the code (code wins), fix `wiki/index.md` if a page or relationship changed, and append a line to `log.md`.
+  
 | Location | What it is — and when to read it |
 |---|---|
 | `src/` | Live code — **edit here**. |
@@ -188,5 +176,3 @@ Docs follow Andrej Karpathy's LLM-wiki pattern (`raw/` sources → `wiki/` knowl
 | `docs/agents.md` | When and how to use sub-agents. |
 | `docs/plan.md` | Roadmap / "what's next". |
 | `README.md` | Public front door. |
-| **To search** (answer a question) | Open `docs/wiki/index.md` → the relevant `wiki/*` page → follow `[[links]]`; open `raw/` or the code only to verify a detail the wiki is missing. |
-| **To update** (after a change) | Update the affected page to match the code (code wins), fix `wiki/index.md` if a page or relationship changed, and append a line to `log.md`. |
