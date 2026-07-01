@@ -59,3 +59,41 @@ The style is inspired by Andrej Karpathy's AI-coding workflow and Andrew Ng's ag
 [6] A. Ng, "Agentic Design Patterns Part 1: Four AI agent strategies that improve GPT-4 and GPT-3.5 performance," *The Batch*, DeepLearning.AI, 2024-03-20. Accessed: 2026-07-01. [Online]. Available: https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/
 
 [7] "YouTube video on agentic coding workflows," *YouTube*. Accessed: 2026-07-01. [Online]. Available: https://www.youtube.com/watch?v=h7QJL2_gEXA
+
+## Bonus: Prompt Inspiration
+
+### Workflow specific
+#### Feature Retrospective 
+```markdown
+<TASK> 
+
+Review and summarize (in the chat) every message from me and your response in this entire thread: 
+
+1. In one sentence state the goal(s) 
+2. assess if your approach to solve it worked in 1 try or if you had to trouble shoot 
+3. deduce the best practice that the next agent could benefit from knowing from the start.  
+
+</TASK> 
+
+<TASK > 
+
+We're going to convert this into a table that provides clear instructions for the next agents and update the best practices table in CLAUDE.md 
+
+For each row, provide guidance for the next agent by thinking about "when you need to ___ you should ___, unless ___" 
+
+and then fill out this table and add it to claude.md;  the columns are: 
+
+Situation, Best Practice , exception (if needed) 
+
+Pause here and propose the updates in the chat for discussion before modifying CLAUDE.md 
+
+</TASK> 
+
+<TASK 3> 
+
+Finally, update the project plan write a 1 page session hand off summarizing the work completed here, challenges overcome, and next steps then provide a one sentence starter prompt pointing the next agent to the handoff and listing the documents it needs to read to get started. (at minimum the project plan ) 
+
+</TASK>
+```
+
+### Prompt Catalogues and Libraries
