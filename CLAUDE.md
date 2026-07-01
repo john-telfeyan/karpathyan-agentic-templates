@@ -57,10 +57,10 @@ The test: every changed line should trace directly to the user's request.
 **Push back once when an approach is clearly wrong; ask when genuinely unsure.** Push back up to once if a requested approach is clearly wrong — state why concisely, then proceed if the user confirms. Ask at most 1–few short clarifying questions when an instruction is ambiguous or has multiple valid paths.
 
 ### 8. New logic gets tests
-**Write a test when you add real logic.** Unit-test the logic as features land; don't build test infrastructure for its own sake. See `docs/testing.md` for how to run the suite and the conventions.
+**Write a test when you add real logic.** Unit-test the logic as features land; don't build test infrastructure for its own sake. See `docs/guidance/RELIABILITY_TESTING.md` for how to run the suite and the conventions.
 
 ### 9. Use sub-agents to protect context
-**Spin up a sub-agent for broad or parallel work.** A sub-agent keeps the main context small. Don't spawn one for a small, well-scoped job. See `docs/agents.md` for when to use them and the handoff format.
+**Spin up a sub-agent for broad or parallel work.** A sub-agent keeps the main context small. Don't spawn one for a small, well-scoped job. See `docs/guidance/SUBAGENT_ORCHESTRATOR.md` for when to use them and the handoff format.
 
 ### 10. Write so the director gets the point in one read, and the reasoning only if they want it.
 The director is a data scientist, not a software engineer — fluent in statistics & Python, new to your codebase. The format below is exemplary:
@@ -131,8 +131,8 @@ vi. Break any of these rules sooner than say anything outright barbarous.
 
 ### Debrief
 8. **Verify** — run tests and tie the change to a falsifiable outcome (a passing test, a number, a screenshot). Reflect on failures and iterate, don't guess.
-9. **Document** — update the affected doc in the *same* change.
-10. **Evaluate** completeness with a feature retrospective with the director that updates the Best Practices table below.
+9. **Evaluate** completeness with a feature retrospective with the director that updates the Best Practices table below.
+10. **Document** — update `docs/PROJECT_PLAN.txt`, and relevant wiki/files in the *same* change.
 11. **Commit** — one logical change; imperative subject under 60 characters saying *what* changed; body explains *why* and includeds any dependcies added.
 
 ## Best Practices
@@ -161,18 +161,18 @@ Don't add a dependency without saying why in the commit message.
 
 ## Project map / where to look
 
-Docs follow Andrej Karpathy's LLM-wiki pattern (`raw/` sources → `wiki/` knowledge → `wiki/index.md`, each ingest logged in `log.md`); the repo's code is the ultimate authority — if code and a wiki page disagree, the page is stale.
-- **To update** (after a change) - Update the affected page to match the code (code wins), fix `wiki/index.md` if a page or relationship changed, and append a line to `log.md`.
+Docs follow Andrej Karpathy's LLM-wiki pattern (`docs/raw/` sources → `docs/wiki/` knowledge → `docs/wiki/INDEX.md`, each ingest logged in `docs/wiki/INGEST_LOG.md`); the repo's code is the ultimate authority — if code and a wiki page disagree, the page is stale.
+- **To update** (after a change) - Update the affected page to match the code (code wins), fix `docs/wiki/INDEX.md` if a page or relationship changed, and append a line to `docs/wiki/INGEST_LOG.md`.
   
 | Location | What it is — and when to read it |
 |---|---|
 | `src/` | Live code — **edit here**. |
-| `tests/` | Test suite (how to run it: `docs/testing.md`). |
-| `docs/wiki/index.md` | **Start here** for project domain knowledge: master index of every wiki page and how they relate. |
+| `tests/` | Test suite, if this project adds one. How to run it lives in `docs/guidance/RELIABILITY_TESTING.md`. |
+| `docs/PROJECT_PLAN.txt` | Roadmap, project summary, scope, milestones, and current plan. |
+| `docs/wiki/INDEX.md` | **Start here** for project domain knowledge: master index of every wiki page and how they relate. |
 | `docs/wiki/` | Processed knowledge — one concept per page, cross-linked with `[[page-name]]`. |
 | `docs/raw/` | Frozen source documents — never edit; treat as immutable inputs. |
-| `docs/log.md` | Append-only ingest log — one line per `raw/` → `wiki/` operation. |
-| `docs/testing.md` | How to run tests + conventions. |
-| `docs/agents.md` | When and how to use sub-agents. |
-| `docs/plan.md` | Roadmap / "what's next". |
+| `docs/wiki/INGEST_LOG.md` | Append-only ingest log — one line per `docs/raw/` → `docs/wiki/` operation. |
+| `docs/guidance/RELIABILITY_TESTING.md` | How to run tests + conventions. |
+| `docs/guidance/SUBAGENT_ORCHESTRATOR.md` | When and how to use sub-agents. |
 | `README.md` | Public front door. |

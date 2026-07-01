@@ -1,0 +1,35 @@
+# <PROJECT TITLE> 
+
+## Project Summary
+### Business Case
+
+### Oportunity Statement
+
+### Goals
+**MVP**
+**Primary**
+**Stretch**
+
+### Scope
+**In Scope**
+**Out of Scope**
+
+# Project Plan
+
+## Discovery
+Research...
+
+## Design
+Plan...
+
+## Develope
+####Phase 1:
+Execute...
+
+#### Phase 2:
+Build...
+
+...Phase N:
+
+## Debrief
+Evaluate 
