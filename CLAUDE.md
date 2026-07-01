@@ -137,8 +137,7 @@ vi. Break any of these rules sooner than say anything outright barbarous.
 
 ## Best Practices
 
-Hard-won lessons from past sessions.
-
+Hard-won lessons from past sessions. "when you need to `<situation>` you should `<best practice>`, unless `<exception>`." 
 | Situation | Best Practice | Exception |
 |---|---|---|
 | <long build/download> | Run it in the background; act on completion. | A human glance is faster. |
