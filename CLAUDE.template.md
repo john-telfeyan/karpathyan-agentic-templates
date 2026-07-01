@@ -174,36 +174,19 @@ Don't add a dependency without saying why in the commit message.
 
 ## Project map / where to look
 
-```
-src/          live code — edit here
-tests/        test suite
-docs/         knowledge wiki + process docs — START AT docs/index.md
-  index.md    master index of all wiki pages and how they relate
-  log.md      append-only ingest log (every raw -> wiki operation)
-  testing.md  how to run tests + conventions
-  agents.md   when and how to use sub-agents
-  raw/        frozen source documents — never edit
-  wiki/       processed knowledge, one concept per page, [[cross-linked]]
-README.md     public front door
-```
+Docs follow Andrej Karpathy's LLM-wiki pattern (`raw/` sources → `wiki/` knowledge → `wiki/index.md`, each ingest logged in `log.md`); the repo's code is the ultimate authority — if code and a wiki page disagree, the page is stale.
 
-| When you're working on… | Read first |
+| Location | What it is — and when to read it |
 |---|---|
-| Project domain knowledge | `docs/index.md` → the relevant `docs/wiki/*` page |
-| Testing | `docs/testing.md` |
-| Sub-agents | `docs/agents.md` |
-| Roadmap / "what's next" | `<docs/plan.md>` |
-
-## Docs: the knowledge wiki (Karpathy LLM-wiki pattern)
-
-Source of truth for *what we're building* lives in `docs/`. Three layers, with the
-repo's code as the ultimate authority:
-
-- **`raw/`** — immutable source documents. Never edit; treat as frozen inputs.
-- **`wiki/`** — processed knowledge. One markdown page per concept, cross-linked with `[[page-name]]`.
-- **`index.md`** — master index: every wiki page, a one-line summary, and the relationship map. **Start here.**
-- **`log.md`** — append one line per ingest (a raw source turned into wiki pages).
-
-**To search (answer a question):** open `docs/index.md` → follow it to the relevant `wiki/` page(s) → follow `[[links]]`. Open `raw/` or the code only to verify a detail the wiki is missing.
-
-**To update (after a change):** find the affected page via `index.md`, update it to match the new source of truth (code wins; if they disagree, the wiki is stale — fix it), update `index.md` if a page or relationship changed, and append a line to `log.md`.
+| `src/` | Live code — **edit here**. |
+| `tests/` | Test suite (how to run it: `docs/testing.md`). |
+| `docs/wiki/index.md` | **Start here** for project domain knowledge: master index of every wiki page and how they relate. |
+| `docs/wiki/` | Processed knowledge — one concept per page, cross-linked with `[[page-name]]`. |
+| `docs/raw/` | Frozen source documents — never edit; treat as immutable inputs. |
+| `docs/log.md` | Append-only ingest log — one line per `raw/` → `wiki/` operation. |
+| `docs/testing.md` | How to run tests + conventions. |
+| `docs/agents.md` | When and how to use sub-agents. |
+| `docs/plan.md` | Roadmap / "what's next". |
+| `README.md` | Public front door. |
+| **To search** (answer a question) | Open `docs/wiki/index.md` → the relevant `wiki/*` page → follow `[[links]]`; open `raw/` or the code only to verify a detail the wiki is missing. |
+| **To update** (after a change) | Update the affected page to match the code (code wins), fix `wiki/index.md` if a page or relationship changed, and append a line to `log.md`. |
