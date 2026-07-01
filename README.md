@@ -14,15 +14,15 @@ This repository packages opinionated agent instructions, supporting docs, and lo
 | Path | Purpose |
 |---|---|
 | `CLAUDE.md` | Main shared agent instruction template. Fill in project name, goal, stack, workflow rules, and lessons learned. |
-| `AGENTS.md` | Codex/OpenAI entry point; imports `CLAUDE.md`. |
+| `AGENTS.md` | Just says `@CLAUDE.md`. |
 | `.claude/settings.json` | Claude Code permission policy for common tools, with explicit denies for risky operations. |
 | `.codex/settings.json` | Codex settings copy matching the Claude permission policy. |
-| `docs/PROJECT_PLAN.txt` | Project summary, scope, milestones, and plan. |
-| `docs/guidance/RELIABILITY_TESTING.md` | Test commands and conventions for the target project. |
+| `docs/PROJECT_PLAN.txt` | (placeholder shell) Project summary, scope, milestones, and plan. |
+| `docs/guidance/RELIABILITY_TESTING.md` | (placeholder shell) Test commands and conventions for the target project. |
 | `docs/guidance/SUBAGENT_ORCHESTRATOR.md` | Sub-agent orchestration guidance and handoff patterns. |
-| `docs/raw/` | Frozen source documents for the wiki. |
-| `docs/wiki/INDEX.md` | Master index for processed project knowledge. |
-| `docs/wiki/INGEST_LOG.md` | Append-only ingest log for source-to-wiki updates. |
+| `docs/raw/` | (placeholder shell)Frozen source documents for the wiki. |
+| `docs/wiki/INDEX.md` | (placeholder shell) Master index for processed project knowledge. |
+| `docs/wiki/INGEST_LOG.md` | (placeholder shell) Append-only ingest log for source-to-wiki updates. |
 | `LICENSE` | MIT license. |
 
 ## How to Use
